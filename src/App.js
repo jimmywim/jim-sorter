@@ -50,8 +50,8 @@ function randomInteger(min, max) {
 // ).length;
 
 
-Array.prototype.sortBy = function (p) {
-  return this.slice(0).sort(function (a, b) {
+const sortBy = function (arr, p) {
+  return arr.slice(0).sort(function (a, b) {
     return (a[p] > b[p]) ? 1 : (a[p] < b[p]) ? -1 : 0;
   });
 }
@@ -86,7 +86,7 @@ function App() {
     let contestItem1 = sortedItems[contestIndex];
     let contestItem2 = sortedItems[contestIndex2];
 
-    let contestId = [contestItem1, contestItem2].sortBy('name').map(c => c.name).join("-");
+    let contestId = sortBy([contestItem1, contestItem2], 'name').map(c => c.name).join("-");
 
     console.log("Contest: ", contestId)
 

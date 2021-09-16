@@ -1,4 +1,3 @@
-import { debounce } from '../util/debounce';
 import './Ranker.css';
 
 export default function Ranker(props) {
